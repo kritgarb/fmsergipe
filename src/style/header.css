@@ -72,24 +72,23 @@ nav {
     }
 
     .logo img {
-        width: 25%; /* Logo menor */
+        width: 25%; 
+        flex: 1;
     }
 
-    /* Ajusta o layout do menu para ocupar toda a largura da tela */
     nav {
         width: 100%;
         justify-content: space-between;
         align-items: flex-end;
     }
 
-    /* Esconde o menu horizontal e transforma ele em vertical em telas pequenas */
     .menu ul {
-        display: none; /* Menu escondido inicialmente */
+        display: none; 
         flex-direction: column;
         width: 100%;
         background-color: #f4f4f4;
         position: absolute;
-        top: 70px; /* Distância abaixo do cabeçalho */
+        top: 70px; 
         left: 0;
         right: 0;
         text-align: center;
@@ -100,18 +99,17 @@ nav {
         font-size: 1.1em;
     }
 
-    /* Exibe o ícone de menu em telas pequenas */
     .menu-icon {
-        display: flex; /* Exibe o ícone */
+        display: flex; 
     }
 }
 
 @media (max-width: 480px) {
     .menu a {
-        font-size: 1em; /* Reduz o tamanho da fonte */
+        font-size: 1em; 
     }
 
     .logo img {
-        width: 60%; /* Logo ainda menor em telas muito pequenas */
+        width: 60%; 
     }
 }
