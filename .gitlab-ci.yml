@@ -1,0 +1,26 @@
+stages:
+  - deploy_prod
+cache:
+  #
+  paths:
+    - node_modules/
+deploy_prod:
+  stage: deploy_prod
+  before_script:
+    - sudo apt install sshpass
+    - touch .env
+    - echo "API_HOST=$API_HOST" >> .env.local
+    - echo "FRONT_URL=$FRONT_URL" >> .env.local
+    - echo "sistemaId=$sistemaId" >> .env.local
+    - echo "RECAPTCHA_SITE_KEY=$RECAPTCHA_SITE_KEY" >> .env.local
+    - cat .env
+    - docker build -t cfl_landing_page_front .
+    - docker tag "cfl_landing_page_front" tvsedocker:5000/"cfl_landing_page_front"
+    - docker push tvsedocker:5000/"cfl_landing_page_front"
+  script:
+    - sshpass -p $DEV_PASS_PRODUCTION ssh -o "StrictHostKeyChecking=no" -T $DEV_SSH_PRODUCTION "docker pull tvsedocker:5000/cfl_landing_page_front"
+    - sshpass -p $DEV_PASS_PRODUCTION ssh -o "StrictHostKeyChecking=no" -T $DEV_SSH_PRODUCTION "docker rm -f cfl_landing_page_front && docker image prune --all -f && docker run -d -p 3009:3009 --restart=always --name cfl_landing_page_front tvsedocker:5000/cfl_landing_page_front"
+  tags:
+    - docker
+  only:
+    - front
