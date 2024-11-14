@@ -6,59 +6,92 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 
-import PROF from '@/images/professora.jpeg';
-import SOLAR_PANELS from '@/images/photo-1558449028-b53a39d100fc.avif';
-import REDES from '@/images/photo-1521542464131-cb30f7398bc6.avif';
-import SOFTWARE from '@/images/software.jpg';
-import TRANSMISSOES from '@/images/camera.jpg';
+import ADJAN from '@/images/adjan souza.png';
+import RICARDO from '@/images/ricardo pop.png';
+import SILVIO from '@/images/silvio silvetta.png';
+import EDILSON from '@/images/edilson vieira.png';
+import FABIOG from '@/images/fábio Gama.png';
+import FABIOP from "@/images/fabio pan.png";
+import ADRIANA from "@/images/adriana amada.jpg"
 import React from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 
 const styles = {
-  title: 'text-5xl md:text-6xl text-center',
+  title: 'text-5xl md:text-6xl text-center text-black',
   carousel: 'w-[80%] md:w-[600px]',
-  container: 'text-primary flex-col section-container',
+  container: 'text-black flex-col section-container',
   mainDiv: 'w-full flex place-content-center',
-  img: 'aspect-square justify-center min-w-[190px] md:max-w-[500px] h-auto mt-8 mb-3',
-  itemText: 'text-xl md:text-3xl flex text-center',
+  img: 'aspect-square justify-center min-w-[480px] md:max-w-[500px] h-auto mt-8 mb-3',
+  itemText: 'text-xl md:text-3xl flex text-center text-black',
+  SubitemText: 'text-lg md:text-xl flex text-center text-black',
   carouselItem: 'content center items-center justify-center flex flex-col',
 };
 
 const SEP = React.forwardRef<HTMLDivElement, {}>((props, ref) => (
   <div ref={ref} className={styles.mainDiv}>
     <div className={styles.container}>
-      <span className={styles.title}>Soluções e Produtos</span>
+      <span className={styles.title}>Equipe</span>
       <Carousel
         plugins={[
           Autoplay({
-            delay: 3000,
+            delay: 5000,
           }),
         ]}
         className={styles.carousel}
       >
         <CarouselContent>
           <CarouselItem className={styles.carouselItem}>
-            <img src={PROF} alt="prof" className={styles.img} />
+            <img src={ADJAN} alt="adjan" className={styles.img} />
             <span className={styles.itemText}>
-              Interatividade em sala de aula
+              Adjan Souza
+            </span>
+            <span className={styles.SubitemText}>
+              Eu sou Brabo
             </span>
           </CarouselItem>
           <CarouselItem className={styles.carouselItem}>
-            <img src={SOLAR_PANELS} alt="SOLAR_PANELS" className={styles.img} />
-            <span className={styles.itemText}>Painéis de Energia solar</span>
+            <img src={RICARDO} alt="ricardo" className={styles.img} />
+            <span className={styles.itemText}>Ricardo Pop</span>
+            <span className={styles.SubitemText}>
+              Eu sou Brabo
+            </span>
           </CarouselItem>
           <CarouselItem className={styles.carouselItem}>
-            <img src={REDES} alt="redes" className={styles.img} />
-            <span className={styles.itemText}>Redes de Computadores</span>
+            <img src={SILVIO} alt="silvio" className={styles.img} />
+            <span className={styles.itemText}>Silvio Silvetta</span>
+            <span className={styles.SubitemText}>
+              Eu sou Brabo
+            </span>
           </CarouselItem>
           <CarouselItem className={styles.carouselItem}>
-            <img src={SOFTWARE} alt="soft" className={styles.img} />
-            <span className={styles.itemText}>Desenvolvimento de Software</span>
+            <img src={EDILSON} alt="edilson" className={styles.img} />
+            <span className={styles.itemText}>Edilson Vieira</span>
+            <span className={styles.SubitemText}>
+              Eu sou Brabo
+            </span>
           </CarouselItem>
           <CarouselItem className={styles.carouselItem}>
-            <img src={TRANSMISSOES} alt="transmissoes" className={styles.img} />
-            <span className={styles.itemText}>Transmissões Ao Vivo</span>
+            <img src={FABIOG} alt="fabiog" className={styles.img} />
+            <span className={styles.itemText}>Fábio Gama</span>
+            <span className={styles.SubitemText}>
+              Eu sou Brabo
+            </span>
           </CarouselItem>
+          <CarouselItem className={styles.carouselItem}>
+            <img src={FABIOP} alt="fabiop" className={styles.img} />
+            <span className={styles.itemText}>Fábio Pan</span>
+            <span className={styles.SubitemText}>
+              Eu sou Brabo
+            </span>
+          </CarouselItem>
+          <CarouselItem className={styles.carouselItem}>
+            <img src={ADRIANA} alt="adriana" className={styles.img} />
+            <span className={styles.itemText}>Adriana Amada</span>
+            <span className={styles.SubitemText}>
+              Eu sou Braba
+            </span>
+          </CarouselItem>
+
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />

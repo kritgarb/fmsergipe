@@ -1,14 +1,16 @@
-import ICON from '@/images/CFL_sign_redo.png';
+import ICON from '@/images/Zé Bocao - sign-2.png';
 import React from 'react';
 
 const styles = {
-  title: 'text-6xl md:text-8xl',
-  descr: 'text-xl md:text-3xl w-full max-w-[500px]',
+  title: 'text-6xl md:text-8xl text-black',
+  descr: 'text-xl md:text-3xl w-full max-w-[600px] text-black',
   frases: 'text-left flex flex-col z-10 text-primary max-w-[700px] w-[70%]',
-  icon: 'blur-lg max-w-[550px] lg:blur-none absolute right-[18vw] h-auto',
+  icon: 'blur-lg max-w-[520px] lg:blur-none absolute right-[18vw] h-auto drop-shadow-xl transition-transform duration-300 hover:scale-110',
+
   container: 'shrink w-[80%] flex flex-row items-center max-w-[1100px]',
   mainDiv:
-    'min-h-[700px] bg-gradient-to-r from-babyBlue to-third from-5% via-35% to-100% flex place-content-center p-30',
+  'min-h-[700px] bg-gradient-to-r from-cor3 to-cor2 flex place-content-center p-30',
+
 };
 
 const Outdoor = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
@@ -16,9 +18,9 @@ const Outdoor = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
     <div ref={ref} className={styles.mainDiv}>
       <div className={styles.container}>
         <div className={styles.frases}>
-          <span className={styles.title}>Crie o futuro do seu negócio</span>
+          <span className={styles.title}>Conecte-se ao som do sucesso</span>
           <span className={styles.descr}>
-            Oferecemos o impulso que você precisa para prosperar no mercado
+          Leve sua paixão pelo rádio a um novo nível
           </span>
         </div>
         <img className={styles.icon} alt="CFL" src={ICON}></img>

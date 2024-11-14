@@ -21,34 +21,37 @@ export function Menu({ scrollToRef }: TopMenuProps) {
             <Button
               onClick={() => scrollToRef('quemsomos')}
               variant={'outline'}
+              className='text-black'
             >
-              Quem somos
+              Sobre nós
             </Button>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Button
               onClick={() => scrollToRef('conectese')}
               variant={'outline'}
+              className='text-black'
             >
-              Conecte-se
+              Escute a Rádio
             </Button>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Button onClick={() => scrollToRef('sep')} variant={'outline'}>
-              Soluções e Produtos
+            <Button className='text-black' onClick={() => scrollToRef('sep')} variant={'outline'}>
+              Equipe
             </Button>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Button onClick={() => scrollToRef('parceiros')} variant="outline">
-              Clientes e Parceiros
+            <Button className='text-black' onClick={() => scrollToRef('parceiros')} variant="outline">
+              Notícias
             </Button>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Button
               onClick={() => scrollToRef('faleconosco')}
               variant={'outline'}
+              className='text-black'
             >
-              Fale conosco
+              Contato
             </Button>
           </DropdownMenuItem>
         </DropdownMenuGroup>
