@@ -40,7 +40,7 @@ function useCarousel() {
 const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & CarouselProps>(
   ({ orientation = 'horizontal', opts, setApi, plugins, className, children, ...props }, ref) => {
     const [carouselRef, api] = useEmblaCarousel(
-      { ...opts, axis: orientation === 'horizontal' ? 'x' : 'y' }, // Ajuste para a direção horizontal ou vertical
+      { ...opts, axis: orientation === 'horizontal' ? 'x' : 'y' },
       plugins
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
@@ -110,7 +110,6 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
 
 Carousel.displayName = 'Carousel';
 
-
 const CarouselContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => {
     const { carouselRef, orientation } = useCarousel();
@@ -127,6 +126,7 @@ const CarouselContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HT
   }
 );
 CarouselContent.displayName = 'CarouselContent';
+
 const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => {
     const { orientation } = useCarousel();
@@ -137,7 +137,7 @@ const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
         role="group"
         aria-roledescription="slide"
         className={cn(
-          'min-w-0 shrink-0 grow-0 basis-[100%]', // 50% da largura para dois itens
+          'min-w-0 shrink-0 grow-0 basis-full',
           orientation === 'horizontal' ? 'pl-4' : 'pt-4',
           className
         )}
@@ -147,6 +147,7 @@ const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
   }
 );
 CarouselItem.displayName = 'CarouselItem';
+
 const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
   ({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
     const { scrollPrev, canScrollPrev } = useCarousel();
