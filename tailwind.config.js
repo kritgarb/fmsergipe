@@ -14,7 +14,6 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      // padding: '2rem',
       screens: {
         sm: '280px',
         md: '768px',
@@ -42,6 +41,7 @@ module.exports = {
         },
         cor3: {
           DEFAULT: 'var(--cor3)',
+         
         },
         secondary: {
           DEFAULT: 'var(--secondary-color)',
