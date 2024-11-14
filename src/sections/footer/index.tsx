@@ -1,4 +1,4 @@
-import LOGO from '@/images/LOGO-CFL-TECNOLOGIA-2.png';
+import LOGO from '@/images/FM_SERGIPE_COR_HORIZONTAL.png';
 import { InstagramLogo } from '@phosphor-icons/react';
 import GROUP_SERGIPE from '@/images/gruposergipe_landingpage_cfl.png';
 import GrupoSergipeFooter from '@/components/grupoSergipeFooter';
@@ -8,23 +8,15 @@ const Footer = () => {
     mainDiv: 'flex justify-center',
     container: 'z-10 flex-col absolute section-container',
     links:
-      'text-secondary flex flex-row justify-center content-center items-center p-4 gap-[5px]',
-    logo: 'z-10 relative',
+      'text-black flex flex-row justify-center content-center items-center p-4 gap-[5px]',
+    logo: 'z-10 relative w-[300px]',
     svg: 'absolute w-full h-[400px] box-border block bg-babyBlue ',
-    groupSergipe: 'z-10 relative w-full  ',
+    groupSergipe: 'z-10 relative w-[80%]',
   };
   return (
     <div className={styles.mainDiv}>
       <div className={styles.container}>
         <img className={styles.logo} src={LOGO}></img>
-        <a
-          href="https://www.instagram.com/cfltecnologia/"
-          target="_blank"
-          className={styles.links}
-        >
-          <InstagramLogo size={32} weight="fill" color="#5a2678" />{' '}
-          @cfltecnologia
-        </a>
         <GrupoSergipeFooter style={styles.groupSergipe} />
       </div>
 
@@ -43,16 +35,16 @@ const Footer = () => {
         <defs>
           <linearGradient id="bg">
             <stop
-              offset="0%"
-              style={{ stopColor: 'rgba(130, 158, 249, 0.06)' }}
+              offset="10%"
+              style={{ stopColor: '#FFDC13' }}
             ></stop>
             <stop
-              offset="50%"
-              style={{ stopColor: 'rgba(76, 190, 255, 0.6)' }}
+              offset="40%"
+              style={{ stopColor: '#FF060B' }}
             ></stop>
             <stop
-              offset="100%"
-              style={{ stopColor: 'rgba(115, 209, 72, 0.2)' }}
+              offset="90%"
+              style={{ stopColor: '#FFDC13' }}
             ></stop>
           </linearGradient>
           <path
