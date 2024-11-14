@@ -1,9 +1,7 @@
-import ButtonGroupToolbar from '../../components/ButtonGroupToolbar';
-// import styles from './FaleConosco.module.css';
-import { ArrowRight } from '@phosphor-icons/react';
 import { createRef, useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import api from '../../services/api';
+// import submit from './submit';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -13,6 +11,7 @@ import { Toaster, toast } from 'sonner';
 import { Loader2 } from 'lucide-react';
 import faleConoscoSchema from './schema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import AVATAR from '@/images/avatar.png';
 
 type Formulario = {
   nome: string;
@@ -24,12 +23,12 @@ type Formulario = {
 
 const styles = {
   container: 'text-white flex-row flex-wrap section-container pt-16',
-  mainDiv: 'bg-babyBlue w-full flex place-content-center',
-  button: 'text-white rounded-[5px] text-xl h-15',
+  mainDiv: 'bg-white w-full flex place-content-center',
+  button: 'text-white rounded-[5px] text-xl h-15 bg-[#FF060B] hover:bg-[#6C0000]',
   formDiv:
-    'w-[90%] mt-4 md:mt-0 md:w-[50%] max-w-[400px] drop-shadow-lg text-xl bg-white text-secondary flex rounded-lg flex-col items-center gap-[20px] p-10',
+    'w-[90%] mt-4 md:mt-0 md:w-[50%] max-w-[400px] drop-shadow-lg text-xl bg-white text-[#FF060B] flex rounded-lg flex-col items-center gap-[20px] p-10',
   textArea:
-    'w-[80%] md:w-[50%] text-2xl flex gap-[30px]  flex-col text-primary text-left indent-25 md:p-10 ',
+    'w-[80%] md:w-[50%] text-2xl flex gap-[30px]  flex-col text-black text-left indent-25 md:p-10 ',
   form: 'flex flex-col gap-[20px]',
   title: 'text-3xl',
   descr: 'text-xl max-w-[400px]',
@@ -40,6 +39,7 @@ const styles = {
     'flex flex-row  w-full text-slate-400 gap-4 place-content-center items-center text-justify ',
   politicas: 'text-sm max-w-[60%] p-0',
   faleconosco: 'text-center text-2xl',
+  avatar: 'w-full h-auto relative z-0 rounded-lg transition-all duration-300 hover:scale-110',
 };
 
 const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
@@ -85,33 +85,9 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
       <div className={styles.container}>
         <div className={styles.textArea}>
           <span className={styles.title}>
-            Desbloqueie a inovação com nossas soluções tecnológicas!
+          Queremos ouvir você! Seja para mandar um recado, sugerir uma música ou compartilhar sua opinião.
           </span>
-          <div className={styles.descr}>
-            <div className={styles.bloco1}>
-              Acreditamos que o uso inteligente da tecnologia é fundamental para
-              o sucesso de uma empresa e estamos prontos para ajudá-lo a
-              alcançar seus objetivos. Podemos fornecer à sua empresa:
-            </div>
-            <div>
-              <span className={styles.topic}>Profissionais qualificados</span>
-              <span className={styles.topicDescr}>
-                - Será atendido por especialistas apaixonados e experientes
-              </span>
-            </div>
-            <div>
-              <span className={styles.topic}>Tecnologia de Ponta</span>
-              <span className={styles.topicDescr}>
-                - Eficientes, seguras e inovadoras
-              </span>
-            </div>
-            <div>
-              <span className={styles.topic}>Atendimento Exclusivo</span>
-              <span className={styles.topicDescr}>
-                - Suporte dedicado e em prontidão
-              </span>
-            </div>
-          </div>
+          <img className={styles.avatar} src={AVATAR}/>
         </div>
         <div className={styles.formDiv}>
           <span className={styles.faleconosco}>Fale conosco!</span>

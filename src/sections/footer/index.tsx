@@ -1,4 +1,4 @@
-import LOGO from '@/images/FM_SERGIPE_COR_HORIZONTAL.png';
+import LOGO from '@/images/FM SERGIPE - FOOTER.png';
 import { InstagramLogo } from '@phosphor-icons/react';
 import GROUP_SERGIPE from '@/images/gruposergipe_landingpage_cfl.png';
 import GrupoSergipeFooter from '@/components/grupoSergipeFooter';
@@ -10,7 +10,7 @@ const Footer = () => {
     links:
       'text-black flex flex-row justify-center content-center items-center p-4 gap-[5px]',
     logo: 'z-10 relative w-[300px]',
-    svg: 'absolute w-full h-[400px] box-border block bg-babyBlue ',
+    svg: 'absolute w-full h-[400px] box-border block bg-white ',
     groupSergipe: 'z-10 relative w-[80%]',
   };
   return (
