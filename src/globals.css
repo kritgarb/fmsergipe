@@ -4,20 +4,18 @@
 @tailwind utilities;
 
 @layer utilities {
-  /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
   }
   .section-container {
     @apply flex items-center content-center justify-center max-w-[1100px] w-[80%] mt-12 mb-12;
   }
   .partner-card {
-    @apply bg-secondary min-w-60 rounded-sm min-h-56 justify-center hover:bg-primary flex items-center transform hover:scale-110 transition-all duration-500;
+    @apply bg-[#FF060B] min-w-60 rounded-sm min-h-56 justify-center hover:bg-[#6C0000] flex items-center transform hover:scale-110 transition-all duration-500;
   }
   .partner-div {
     @apply flex flex-row items-center justify-center flex-wrap gap-4 max-w-3xl;
@@ -40,13 +38,7 @@
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 47.4% 11.2%;
-
-    /* --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%; */
-
+    
     --primary-color: #2f1963;
     --secondary-color: #5a2678;
     --secondary-color-foreground: #8b67a0;

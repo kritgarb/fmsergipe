@@ -14,7 +14,6 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      // padding: '2rem',
       screens: {
         sm: '280px',
         md: '768px',
@@ -30,7 +29,6 @@ module.exports = {
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'var(--primary-color)',
-          // foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
           DEFAULT: 'var(--secondary-color)',
