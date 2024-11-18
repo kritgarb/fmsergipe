@@ -8,11 +8,12 @@ import {
 
 import ADJAN from '@/images/equipe/ADJAN.png';
 import RICARDO from '@/images/equipe/POP.png';
-import SILVIO from '@/images/silvio silvetta.png';
-import EDILSON from '@/images/edilson vieira.png';
+import SILVIO from '@/images/equipe/SILVETTA.png';
+import EDILSON from '@/images//equipe/EDILSON.png';
 import FABIOG from '@/images/equipe/GAMA.png';
-import FABIOP from "@/images/fabio pan.png";
-import ADRIANA from "@/images/adriana amada.png"
+import FABIOP from "@/images//equipe/PAN.png";
+import ADRIANA from "@/images/equipe/AMADA.png";
+import MARCELO from "@/images/equipe/MARCELO.png";
 import React from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 
@@ -89,6 +90,13 @@ const SEP = React.forwardRef<HTMLDivElement, {}>((props, ref) => (
             <span className={styles.itemText}>Adriana Amada</span>
             <span className={styles.SubitemText}>
               Eu sou Braba
+            </span>
+          </CarouselItem>
+          <CarouselItem className={styles.carouselItem}>
+            <img src={MARCELO} alt="adriana" className={styles.img} />
+            <span className={styles.itemText}>Marcelo</span>
+            <span className={styles.SubitemText}>
+              Eu sou Brabo demais
             </span>
           </CarouselItem>
 
