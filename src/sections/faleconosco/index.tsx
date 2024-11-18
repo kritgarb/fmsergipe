@@ -23,7 +23,7 @@ type Formulario = {
 
 const styles = {
   container: 'text-white flex-row flex-wrap section-container pt-16',
-  mainDiv: 'bg-white w-full flex place-content-center',
+  mainDiv: 'bg-[#f9f9f9] w-full flex place-content-center',
   button: 'text-white rounded-[5px] text-xl h-15 bg-[#FF060B] hover:bg-[#6C0000]',
   formDiv:
     'w-[90%] mt-4 md:mt-0 md:w-[50%] max-w-[400px] drop-shadow-lg text-xl bg-white text-[#FF060B] flex rounded-lg flex-col items-center gap-[20px] p-10',

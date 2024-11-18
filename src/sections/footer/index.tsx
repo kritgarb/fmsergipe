@@ -10,7 +10,7 @@ const Footer = () => {
     links:
       'text-black flex flex-row justify-center content-center items-center p-4 gap-[5px]',
     logo: 'z-10 relative w-[300px]',
-    svg: 'absolute w-full h-[400px] box-border block bg-white ',
+    svg: 'absolute w-full h-[400px] box-border block bg-[#f9f9f9]',
     groupSergipe: 'z-10 relative w-[80%]',
   };
   return (
