@@ -6,7 +6,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 
-import ADJAN from '@/images/adjan souza.png';
+import ADJAN from '@/images/equipe/ADJAN.png';
 import RICARDO from '@/images/ricardo pop.png';
 import SILVIO from '@/images/silvio silvetta.png';
 import EDILSON from '@/images/edilson vieira.png';
@@ -21,7 +21,7 @@ const styles = {
   carousel: 'w-[80%] md:w-[600px]',
   container: 'text-black flex-col section-container',
   mainDiv: 'w-full bg-[#f9f9f9] flex place-content-center',
-  img: 'aspect-square justify-center min-w-[210px] md:max-w-[500px] h-auto mt-8 mb-3',
+  img: 'aspect-square justify-center min-w-[210px] md:max-w-[300px] h-auto mt-8 mb-3 rounded-',
   itemText: 'text-xl md:text-3xl flex text-center text-black',
   SubitemText: 'text-lg md:text-xl flex text-center text-black',
   carouselItem: 'content center items-center justify-center flex flex-col',
@@ -34,7 +34,7 @@ const SEP = React.forwardRef<HTMLDivElement, {}>((props, ref) => (
       <Carousel
         plugins={[
           Autoplay({
-            delay: 5000,
+            delay:100000,
           }),
         ]}
         className={styles.carousel}
