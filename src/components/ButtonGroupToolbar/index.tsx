@@ -42,7 +42,7 @@ export default function ButtonGroupToolbar({ scrollToRef }: TopMenuProps) {
               variant="outline"
               className='text-black'
             >
-              Contato
+              Peça uma Música
             </Button>
           </div>
         )}

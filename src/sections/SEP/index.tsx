@@ -20,7 +20,7 @@ const styles = {
   title: 'text-5xl md:text-6xl text-center text-black',
   carousel: 'w-[80%] md:w-[600px]',
   container: 'text-black flex-col section-container',
-  mainDiv: 'w-full flex place-content-center',
+  mainDiv: 'w-full bg-[#f9f9f9] flex place-content-center',
   img: 'aspect-square justify-center min-w-[210px] md:max-w-[500px] h-auto mt-8 mb-3',
   itemText: 'text-xl md:text-3xl flex text-center text-black',
   SubitemText: 'text-lg md:text-xl flex text-center text-black',

@@ -55,9 +55,9 @@ export default function HomePage() {
     <div className="w-full">
       <ButtonGroupToolbar scrollToRef={scrollToRef}></ButtonGroupToolbar>
       <Outdoor ref={outdoorRef} />
-      <SEP ref={sepRef} />
-      <Conecte ref={conecteseRef} />
       <Parceiros ref={parceirosRef} />
+      <Conecte ref={conecteseRef} />
+      <SEP ref={sepRef} />
       <QuemSomos ref={quemsomosRef} />
       <FaleConosco ref={faleConoscoRef} />
       <Footer />
