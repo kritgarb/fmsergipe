@@ -57,8 +57,8 @@ export default function HomePage() {
       <Outdoor ref={outdoorRef} />
       <SEP ref={sepRef} />
       <Conecte ref={conecteseRef} />
-      <QuemSomos ref={quemsomosRef} />
       <Parceiros ref={parceirosRef} />
+      <QuemSomos ref={quemsomosRef} />
       <FaleConosco ref={faleConoscoRef} />
       <Footer />
     </div>

@@ -22,27 +22,15 @@ const QuemSomos = React.forwardRef<HTMLDivElement, {}>((props, ref) => (
       eventos de grande porte, como “Garota Verão”, “Primavera no Ar” e o “Forrozão”, 
       que até hoje é sucesso de público. <br></br><br></br>
 
-      Além de explorar a interatividade com o ouvinte através da internet – incentivando pedidos 
-      musicais, lançando promoções, brincadeiras, enquetes e prêmios -, a FM Sergipe mantém ainda 
-      uma programação on-line, através de seu site www.fmsergipe.com.br, onde é possível acompanhar em tempo real tudo o que rola nos estúdios da emissora.<br></br><br></br>
+      Além de explorar a interatividade com o ouvinte através da internet incentivando pedidos 
+      musicais, lançando promoções, brincadeiras, enquetes e prêmios, a FM Sergipe mantém ainda 
+      uma programação on-line, através de seu site www.fmsergipe.com.br, onde é possível acompanhar 
+      em tempo real tudo o que rola nos estúdios da emissora.<br></br><br></br>
 
       Os números de audiência provam que a FM fala no tom e vocabulário adequados, oferecendo uma 
-      programação musical que atende as expectativas dos ouvintes e as melhores possibilidades de uso do meio “rádio” pelas agências e anunciantes.
+      programação musical que atende as expectativas dos ouvintes e as melhores possibilidades de 
+      uso do meio “rádio” pelas agências e anunciantes.
       </div>
-      {/* <div className={styles.diferenciais}>
-        <div className={styles.objetoDiferencial}>
-          <UsersThree size={84} color="#2f1963" />
-          <span>Profissionais qualificados</span>
-        </div>
-        <div className={styles.objetoDiferencial}>
-          <PhoneCall size={84} color="#2f1963" />
-          <span>Atendimento dedicado</span>
-        </div>
-        <div className={styles.objetoDiferencial}>
-          <Cpu size={84} color="#2f1963" />
-          <span>Tecnologia de ponta</span>
-        </div>
-      </div> */}
     </div>
   </div>
 ));
