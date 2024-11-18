@@ -45,41 +45,40 @@ const styles = {
 const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
   const { register, handleSubmit } = useForm<Formulario>({
     resolver: zodResolver(faleConoscoSchema),
-    shouldUseNativeValidation: true,
   });
 
   const [loading, setLoading] = useState(false);
-  const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const onSubmit = useCallback(
-    async (data: Formulario) => {
-      setLoading(true);
-      if (!executeRecaptcha) {
-        console.log('Não verificado');
-        return;
+  const onSubmit = async (data: Formulario) => {
+    setLoading(true);
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success('E-mail enviado com sucesso!');
+      } else {
+        toast.error('Erro ao enviar o e-mail.');
       }
-      try {
-        const token = await executeRecaptcha('cfl_form');
-        await api.post('/submitEmail', {
-          nome: data.nome,
-          email: data.email,
-          telefone: data.telefone,
-          assunto: data.assunto,
-          mensagem: data.mensagem,
-        });
-        toast.success('Seu e-mail foi enviado!', {
-          style: {
-            background: '#bbf7d0',
-          },
-          description: 'Obrigado pelo contato, retornaremos assim que possível',
-        });
-      } catch (error) {
-        alert(error);
-      }
+    } catch (error) {
+      console.error(error);
+      toast.error('Erro ao processar o envio.');
+    } finally {
       setLoading(false);
-    },
-    [executeRecaptcha]
-  );
+    }
+  };
+  
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [assunto,setAssunto] = useState("");
+  const [mensagem,setMensagem] = useState("");
+
   return (
     <div ref={ref} className={styles.mainDiv}>
       <div className={styles.container}>
@@ -93,33 +92,43 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
           <span className={styles.faleconosco}>Fale conosco!</span>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <Input
+              value={nome}
               type="text"
               id="nome"
               {...register('nome')}
+              onChange={(e) => setNome(e.target.value)}
               placeholder="Nome"
             />
             <Input
+              value={email}
               type="email"
               id="email"
               {...register('email')}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail"
             />
             <Input
+              value={telefone}
               type="number"
               id="telefone"
               {...register('telefone')}
+              onChange={(e) => setTelefone(e.target.value)}
               placeholder="Telefone"
             />
             <Input
+              value={assunto}
               type="text"
               id="assunto"
               {...register('assunto')}
+              onChange={(e) => setAssunto(e.target.value)}
               placeholder="Assunto"
             />
             <Textarea
+              value={mensagem}
               id="mensagem"
               {...register('mensagem')}
               placeholder="Mensagem"
+              onChange={(e) => setMensagem(e.target.value)}
               maxLength={400}
             />
             <div className={styles.sendArea}>
