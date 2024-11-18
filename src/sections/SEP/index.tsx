@@ -7,10 +7,10 @@ import {
 } from '@/components/ui/carousel';
 
 import ADJAN from '@/images/equipe/ADJAN.png';
-import RICARDO from '@/images/ricardo pop.png';
+import RICARDO from '@/images/equipe/POP.png';
 import SILVIO from '@/images/silvio silvetta.png';
 import EDILSON from '@/images/edilson vieira.png';
-import FABIOG from '@/images/fábio Gama.png';
+import FABIOG from '@/images/equipe/GAMA.png';
 import FABIOP from "@/images/fabio pan.png";
 import ADRIANA from "@/images/adriana amada.png"
 import React from 'react';
