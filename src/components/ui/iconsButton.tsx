@@ -1,7 +1,7 @@
 import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa';
 
 const IconsButton = () => (
-  <div className="flex gap-4">
+  <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
     <a
       href="https://www.instagram.com/fmsergipe/"
       target="_blank"
@@ -35,3 +35,4 @@ const IconsButton = () => (
 );
 
 export default IconsButton;
+
