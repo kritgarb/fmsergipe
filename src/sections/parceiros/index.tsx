@@ -4,9 +4,9 @@ import ICON_TEMPORARIO from '@/images/icon-gif.gif';
 const Parceiros = React.forwardRef<HTMLDivElement, {}>((props, ref) => (
   <div
     ref={ref}
-    className="flex justify-center w-full bg-[#f9f9f9] min-h-[700px]"
+    className="flex justify-center w-full bg-white min-h-[700px]"
   >
-    <div className="text-[#000] flex-row flex-wrap section-container gap-8 ">
+    <div className="text-[#000] flex-row bg-white flex-wrap section-container gap-8 ">
       <span className="text-5xl sm:text-4xl text-center max-w-[80%] md:max-w-[20%]">
         Programação Principal
       </span>

@@ -25,7 +25,6 @@ const Conecte = React.forwardRef<HTMLDivElement, {}>((props, ref) => (
         <p className={styles.textArea}>
         Conecte-se à música, notícias e emoções que fazem seu dia melhor. Sintonize agora e faça parte da nossa sintonia!
         </p>
-        
       </div>
       
     </div>

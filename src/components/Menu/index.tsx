@@ -51,7 +51,7 @@ export function Menu({ scrollToRef }: TopMenuProps) {
               variant={'outline'}
               className='text-black'
             >
-              Contato
+                Peça uma Música
             </Button>
           </DropdownMenuItem>
         </DropdownMenuGroup>
