@@ -6,13 +6,13 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import React from 'react';
 import { Toaster, toast } from 'sonner';
 import { Loader2 } from 'lucide-react';
 import faleConoscoSchema from './schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import AVATAR from '@/images/avatar.png';
-
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 type Formulario = {
   nome: string;
   email: string;
@@ -49,53 +49,54 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
 
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = async (data: Formulario) => {
-    setLoading(true);
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+  const form = useRef<HTMLFormElement>(null); // Tipagem correta para o formulário
 
-      const result = await response.json();
+  const sendEmail = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
 
-      if (result.success) {
-        toast.success('E-mail enviado com sucesso!');
-      } else {
-        toast.error('Erro ao enviar o e-mail.');
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error('Erro ao processar o envio.');
-    } finally {
-      setLoading(false);
+    if (form.current) { // Verificação para garantir que o formulário não seja nulo
+      emailjs
+        .sendForm(
+          'service_jcppxsv',
+          'template_td1jude',
+          form.current,
+          'h3VPbCjICSezrC4CD' // Atualização: chave pública deve ser passada como string
+        )
+        .then(
+          () => {
+            console.log('SUCCESS!');
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
     }
   };
-  
+
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
-  const [assunto,setAssunto] = useState("");
-  const [mensagem,setMensagem] = useState("");
+  const [assunto, setAssunto] = useState("");
+  const [mensagem, setMensagem] = useState("");
 
   return (
     <div ref={ref} className={styles.mainDiv}>
       <div className={styles.container}>
         <div className={styles.textArea}>
           <span className={styles.title}>
-          Queremos ouvir você! Seja para mandar um recado, sugerir uma música ou compartilhar sua opinião.
+            Queremos ouvir você! Seja para mandar um recado, sugerir uma música ou compartilhar sua opinião.
           </span>
-          <img className={styles.avatar} src={AVATAR}/>
+          <img className={styles.avatar} src={AVATAR} />
         </div>
         <div className={styles.formDiv}>
           <span className={styles.faleconosco}>Fale conosco!</span>
-          <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+          <form className={styles.form} ref={form} onSubmit={sendEmail}>
             <Input
               value={nome}
               type="text"
               id="nome"
-              {...register('nome')}
+              name="user_name"
+      
               onChange={(e) => setNome(e.target.value)}
               placeholder="Nome"
             />
@@ -103,7 +104,8 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
               value={email}
               type="email"
               id="email"
-              {...register('email')}
+              name="user_email"
+              
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail"
             />
@@ -111,7 +113,7 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
               value={telefone}
               type="number"
               id="telefone"
-              {...register('telefone')}
+             name="user_telefone"
               onChange={(e) => setTelefone(e.target.value)}
               placeholder="Telefone"
             />
@@ -119,14 +121,14 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
               value={assunto}
               type="text"
               id="assunto"
-              {...register('assunto')}
+              name="user_assunto"
               onChange={(e) => setAssunto(e.target.value)}
               placeholder="Assunto"
             />
             <Textarea
               value={mensagem}
               id="mensagem"
-              {...register('mensagem')}
+              name="user_mensagem"
               placeholder="Mensagem"
               onChange={(e) => setMensagem(e.target.value)}
               maxLength={400}

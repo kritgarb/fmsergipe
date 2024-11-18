@@ -11,7 +11,7 @@ interface EmailRequestBody {
     mensagem: string;
 }
 
-router.post('/send-email', async (req: Request, res: Response) => {
+router.post('/enviarformulario', async (req: Request, res: Response) => {
     const { nome, email, telefone, assunto, mensagem } = req.body as EmailRequestBody;
 
     try {
