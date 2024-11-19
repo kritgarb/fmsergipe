@@ -43,12 +43,12 @@ const Conecte = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
           </p>
 
           {/* Botão para abrir o modal e tocar o áudio */}
-          <Button
+          <button
             className={styles.button}
             onClick={openModal}
           >
             Escute a Rádio
-          </Button>
+          </button>
         </div>
 
         {/* Modal para reprodução do áudio */}
@@ -56,8 +56,7 @@ const Conecte = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
           <div className={styles.modal}>
             <div className={styles.modalContent}>
               <h3 className="text-center">Reproduzindo Rádio</h3>
-              {/* Player de áudio */}
-              <audio className={styles.audioPlayer} controls autoPlay>
+              <audio controls autoPlay>
                 <source src="http://www.fmsergipe.com.br/radio-ao-vivo" type="audio/mpeg" />
                 Seu navegador não suporta o player de áudio.
               </audio>
