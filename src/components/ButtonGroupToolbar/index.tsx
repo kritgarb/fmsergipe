@@ -25,8 +25,8 @@ export default function ButtonGroupToolbar({ scrollToRef }: TopMenuProps) {
           <Menu scrollToRef={scrollToRef} />
         ) : (
           <div>
-            <Button className='text-black' onClick={() => scrollToRef('quemsomos')} variant="outline">
-              Sobre nós
+            <Button className='text-black' onClick={() => scrollToRef('parceiros')} variant="outline">
+              Programação
             </Button>
             <Button className='text-black' variant="outline" onClick={() => scrollToRef('conectese')}>
               Escute a Rádio
@@ -34,9 +34,12 @@ export default function ButtonGroupToolbar({ scrollToRef }: TopMenuProps) {
             <Button className='text-black' variant="outline" onClick={() => scrollToRef('sep')}>
               Equipe
             </Button>
-            <Button className='text-black' onClick={() => scrollToRef('parceiros')} variant="outline">
-              Programação 
+            <Button className='text-black' onClick={() => scrollToRef('quemsomos')} variant="outline">
+              Sobre nós
             </Button>
+
+
+
             <Button
               onClick={() => scrollToRef('faleconosco')}
               variant="outline"
