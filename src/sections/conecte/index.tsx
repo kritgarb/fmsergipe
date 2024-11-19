@@ -51,7 +51,7 @@ const Conecte = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
           </button>
         </div>
 
-        {/* Modal para reprodução do áudio */}
+        
         {isModalOpen && (
           <div className={styles.modal}>
             <div className={styles.modalContent}>
