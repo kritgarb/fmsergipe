@@ -18,12 +18,8 @@ export function Menu({ scrollToRef }: TopMenuProps) {
       <DropdownMenuContent className="w-26">
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Button
-              onClick={() => scrollToRef('quemsomos')}
-              variant={'outline'}
-              className='text-black'
-            >
-              Sobre nós
+            <Button className='text-black' onClick={() => scrollToRef('parceiros')} variant="outline">
+              Programação
             </Button>
           </DropdownMenuItem>
           <DropdownMenuItem>
@@ -41,17 +37,24 @@ export function Menu({ scrollToRef }: TopMenuProps) {
             </Button>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Button className='text-black' onClick={() => scrollToRef('parceiros')} variant="outline">
-              Notícias
+            <Button
+              onClick={() => scrollToRef('quemsomos')}
+              variant={'outline'}
+              className='text-black'
+            >
+              Sobre nós
             </Button>
           </DropdownMenuItem>
+
+
+
           <DropdownMenuItem>
             <Button
               onClick={() => scrollToRef('faleconosco')}
               variant={'outline'}
               className='text-black'
             >
-                Peça uma Música
+              Peça uma Música
             </Button>
           </DropdownMenuItem>
         </DropdownMenuGroup>
