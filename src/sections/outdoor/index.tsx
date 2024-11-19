@@ -1,5 +1,5 @@
 import ICON from '@/images/Zé Bocao - sign-2.png';
-import React from 'react';
+import React, { useRef } from 'react';
 import IconsButton from '@/components/ui/iconsButton';
 
 const styles = {
@@ -13,6 +13,14 @@ const styles = {
 };
 
 const Outdoor = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const playSound = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0; 
+      audioRef.current.play();
+    }
+  };
+
   return (
     <div ref={ref} className={styles.mainDiv}>
       <div className={styles.container}>
@@ -25,7 +33,13 @@ const Outdoor = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
             <IconsButton />
           </div>
         </div>
-        <img className={styles.icon} alt="CFL" src={ICON}></img>
+        <img
+          className={styles.icon}
+          alt="CFL"
+          src={ICON}
+          onMouseEnter={playSound} 
+        />
+        <audio ref={audioRef} src="../../assets/RISADA LOUCA 2.mp3" preload="auto" />
       </div>
     </div>
   );
