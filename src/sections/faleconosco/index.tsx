@@ -6,13 +6,15 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { Toaster, toast } from 'sonner';
+
 import { Loader2 } from 'lucide-react';
 import faleConoscoSchema from './schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import AVATAR from '@/images/avatar.png';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 type Formulario = {
   nome: string;
   email: string;
@@ -65,9 +67,16 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
         .then(
           () => {
             console.log('SUCCESS!');
+            toast.success('Sugestão enviada com sucesso!');
+            setNome("");
+            setEmail("");
+            setTelefone("");
+            setAssunto("");
+            setMensagem("");
           },
           (error) => {
             console.log('FAILED...', error.text);
+            toast.error('Erro ao enviar sugestão, tente novamnete!');
           },
         );
     }
@@ -96,7 +105,7 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
               type="text"
               id="nome"
               name="user_name"
-      
+
               onChange={(e) => setNome(e.target.value)}
               placeholder="Nome"
             />
@@ -105,7 +114,7 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
               type="email"
               id="email"
               name="user_email"
-              
+
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail"
             />
@@ -113,7 +122,7 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
               value={telefone}
               type="number"
               id="telefone"
-             name="user_telefone"
+              name="user_telefone"
               onChange={(e) => setTelefone(e.target.value)}
               placeholder="Telefone"
             />
@@ -156,8 +165,11 @@ const FaleConosco = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
           </form>
         </div>
       </div>
-      <Toaster />
+
+      <ToastContainer/>
+
     </div>
+
   );
 });
 
