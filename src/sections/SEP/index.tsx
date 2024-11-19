@@ -35,7 +35,7 @@ const SEP = React.forwardRef<HTMLDivElement, {}>((props, ref) => (
       <Carousel
         plugins={[
           Autoplay({
-            delay:100000,
+            delay:5000,
           }),
         ]}
         className={styles.carousel}
