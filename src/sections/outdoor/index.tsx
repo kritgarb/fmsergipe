@@ -39,7 +39,7 @@ const Outdoor = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
           src={ICON}
           onMouseEnter={playSound} 
         />
-        <audio ref={audioRef} src="../../assets/RISADA LOUCA 2.mp3" preload="auto" />
+        <audio ref={audioRef} src="../../assets/RISADA_LOUCA_2.mp3" preload="auto" />
       </div>
     </div>
   );
