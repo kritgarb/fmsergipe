@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import CASE2 from '../../images/FM_SERGIPE_COR_HORIZONTAL.png';
 import Atropos from 'atropos/react';
@@ -15,6 +15,22 @@ const styles = {
 };
 
 const Conecte = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  // Função para tocar o áudio ao vivo
+  const playAudio = () => {
+    if (audioRef.current) {
+      const audio = audioRef.current;
+
+      // Força a reconexão ao stream ao vivo
+      audio.src = "https://08.stmip.net:8012/;";
+      audio.load(); // Recarrega o stream
+      audio.play().catch((err) => {
+        console.error("Erro ao reproduzir o áudio:", err);
+      });
+    }
+  };
+
   return (
     <div ref={ref} className={styles.mainDiv}>
       <div className={styles.container}>
@@ -27,7 +43,13 @@ const Conecte = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
             Conecte-se à música, notícias e emoções que fazem seu dia melhor. Sintonize agora e faça parte da nossa sintonia!
           </p>
 
-          <audio controls className={styles.audioPlayer}>
+          {/* Botão para iniciar o áudio */}
+          <button className={styles.button} onClick={playAudio}>
+            Ouvir ao Vivo
+          </button>
+
+          {/* Player de áudio */}
+          <audio controls className={styles.audioPlayer} ref={audioRef}>
             <source src="https://08.stmip.net:8012/;" type="audio/mpeg" />
             Seu navegador não suporta o player de áudio.
           </audio>
