@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import CASE2 from '../../images/FM_SERGIPE_COR_HORIZONTAL.png';
 import Atropos from 'atropos/react';
 import { Button } from '@mui/material';
@@ -14,7 +13,8 @@ const styles = {
     'm-5 md:m-20 text-left text-xl sm:text-2xl w-full max-w-[90%] md:max-w-80 text-black',
   modal: 'fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center',
   modalContent: 'bg-white p-6 rounded-lg w-[80%] max-w-[500px]',
-  closeButton: 'mt-4 text-white bg-[#FF060B] hover:bg-[#D00406] px-4 py-2 rounded'
+  closeButton: 'mt-4 text-white bg-[#FF060B] hover:bg-[#D00406] px-4 py-2 rounded',
+  audioPlayer: 'w-full',
 };
 
 const Conecte = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
@@ -56,7 +56,8 @@ const Conecte = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
           <div className={styles.modal}>
             <div className={styles.modalContent}>
               <h3 className="text-center">Reproduzindo Rádio</h3>
-              <audio controls autoPlay>
+              {/* Player de áudio */}
+              <audio className={styles.audioPlayer} controls autoPlay>
                 <source src="http://www.fmsergipe.com.br/radio-ao-vivo" type="audio/mpeg" />
                 Seu navegador não suporta o player de áudio.
               </audio>
